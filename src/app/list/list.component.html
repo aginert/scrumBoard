@@ -1,0 +1,18 @@
+<div class="list">
+
+  <h4 class="name">{{listObj.name}}
+    <remove-button (action)="emitToRemoveList()"> </remove-button>
+  </h4>
+
+<div class="task">
+  <task *ngFor="let task of listObj.tasks"
+      [taskObj]="task"
+      (removeTaskByObj)="emitToRemoveTask($event)"></task>
+
+    <input class="addTask"
+           type="text"
+           placeholder="add task"
+           [(ngModel)]="newTaskText"
+           (keyup.enter)="addNewTask()">
+  </div>
+</div>

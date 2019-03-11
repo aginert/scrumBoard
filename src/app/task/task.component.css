@@ -1,0 +1,8 @@
+.task{
+    margin: 0.5em 0;
+    display: flex;
+    justify-content: center;
+}
+.task:hover .removeTask{
+    opacity: 1;
+}

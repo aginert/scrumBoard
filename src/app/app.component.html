@@ -1,0 +1,17 @@
+<header>
+  <input type="text" placeholder=" add list"
+         [(ngModel)]="newListText"
+         (keyup.enter)="addList()">
+  <remove-button (action)="removeAllLists()" text="Borrar Todo"> </remove-button>
+</header>
+
+<section class="lists">
+
+  <list *ngFor="let list of lists"
+        [listObj]="list"
+        (newTask)="addTask($event)"
+        (removeListById)="removeList($event)"
+        (removeTaskById)="removeTask($event)">
+  </list>
+
+</section>
